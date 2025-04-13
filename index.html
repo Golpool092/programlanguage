@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение 10 языков программирования 2025 | MillsCome</title>
+    <meta name="description" content="Подробное сравнение 10 популярных языков программирования: JavaScript, Python, Java, C++, C#, Go, Ruby, Swift, PHP и Rust. Рейтинги, анализ и рекомендации">
+    <meta name="keywords" content="языки программирования, сравнение, JavaScript, Python, Java, C++, какой язык учить">
+    <meta property="og:title" content="Сравнение 10 языков программирования 2025">
+    <meta property="og:description" content="Экспертный анализ 10 самых востребованных языков программирования с рекомендациями">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Навигация */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Карточки языков */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .language-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .language-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .language-rank {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .language-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline;
+        }
+        
+        .language-body {
+            padding: 1.5rem;
+        }
+        
+        .language-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .language-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .language-projects {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .projects-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .project-item {
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Рекламные блоки */
+        .ad-placeholder {
+            background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+            border: 2px dashed var(--gray);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--gray);
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            background: var(--dark);
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            opacity: 0.8;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .language-card {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .language-card:nth-child(1) { animation-delay: 0.1s; }
+        .language-card:nth-child(2) { animation-delay: 0.2s; }
+        .language-card:nth-child(3) { animation-delay: 0.3s; }
+        .language-card:nth-child(4) { animation-delay: 0.4s; }
+        .language-card:nth-child(5) { animation-delay: 0.5s; }
+        .language-card:nth-child(6) { animation-delay: 0.6s; }
+        .language-card:nth-child(7) { animation-delay: 0.7s; }
+        .language-card:nth-child(8) { animation-delay: 0.8s; }
+        .language-card:nth-child(9) { animation-delay: 0.9s; }
+        .language-card:nth-child(10) { animation-delay: 1s; }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Сравнение языков программирования 2025</h1>
+            <p class="subtitle">Экспертный анализ 10 самых востребованных языков с рекомендациями по изучению и применению</p>
+            <div class="nav-links">
+                <a href="https://golpool092.github.io/main/" class="nav-link">← На главную</a>
+                <a href="https://t.me/MillsCome" class="nav-link" target="_blank">Наш Telegram</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- JavaScript -->
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">1</span>
+                    <h2 class="language-title">JavaScript</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Для веб-разработки</span>
+                        <span>Сложность: Средняя</span>
+                    </div>
+                    <div class="language-description">
+                        JavaScript — основной язык для создания интерактивных веб-страниц. С появлением Node.js он также стал использоваться для серверной разработки. Современный JS поддерживает ООП, функциональное программирование и асинхронные операции. 
+                        
+                        Изучение базового синтаксиса займет 2-3 месяца, но для глубокого понимания асинхронности и работы с DOM потребуется не менее года. Основные технологии для изучения: ES6+, React/Vue, Node.js, Express.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Google Maps</div>
+                        <div class="project-item">- Netflix (интерфейс)</div>
+                        <div class="project-item">- Discord</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать JavaScript</a>
+                </div>
+            </div>
+            
+            <!-- Python -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">2</span>
+                    <h2 class="language-title">Python</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Универсальный</span>
+                        <span>Сложность: Низкая</span>
+                    </div>
+                    <div class="language-description">
+                        Python — язык с простым синтаксисом, идеальный для начинающих. Используется в веб-разработке (Django, Flask), data science (Pandas, NumPy), машинном обучении (TensorFlow) и автоматизации. 
+                        
+                        Базовый синтаксис можно освоить за 1 месяц. Для профессионального использования потребуется 6-12 месяцев. Особое внимание стоит уделить работе с библиотеками и ООП. Python имеет одно из самых больших сообществ и количество учебных материалов.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Instagram</div>
+                        <div class="project-item">- YouTube (частично)</div>
+                        <div class="project-item">- Spotify (бэкенд)</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Python</a>
+                </div>
+            </div>
+            
+            <!-- Java -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">3</span>
+                    <h2 class="language-title">Java</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Корпоративный</span>
+                        <span>Сложность: Высокая</span>
+                    </div>
+                    <div class="language-description">
+                        Java — строго типизированный объектно-ориентированный язык, доминирующий в enterprise-разработке, Android (до появления Kotlin) и больших системах. Главные преимущества — кроссплатформенность (JVM) и надежность.
+                        
+                        Для базового изучения потребуется 3-4 месяца. Полноценное освоение займет 1.5-2 года из-за сложных концепций (коллекции, многопоточность, Spring Framework). Java требует глубокого понимания ООП и паттернов проектирования.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Android OS</div>
+                        <div class="project-item">- LinkedIn</div>
+                        <div class="project-item">- Minecraft</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Java</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Рекламный блок 1 -->
+        <div class="ad-placeholder">
+            <h3>Тут могла быть ваша реклама</h3>
+            <p>Размещение рекламы в MillsCome — это доступ к аудитории разработчиков и IT-специалистов</p>
+            <a href="https://t.me/MillsCome" class="btn" target="_blank">Узнать условия</a>
+        </div>
+        
+        <!-- C++ -->
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">4</span>
+                    <h2 class="language-title">C++</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Системное программирование</span>
+                        <span>Сложность: Очень высокая</span>
+                    </div>
+                    <div class="language-description">
+                        C++ — мощный язык для системного программирования, игровых движков и высоконагруженных приложений. Сочетает возможности низкоуровневого программирования с ООП. Современный C++ (стандарты 11/14/17/20) добавил множество удобных функций.
+                        
+                        Для начального уровня потребуется 6-9 месяцев. Полное освоение может занять годы из-за сложных тем (управление памятью, шаблоны, многопоточность). Рекомендуется после изучения основ программирования на более простом языке.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Игры Unreal Engine</div>
+                        <div class="project-item">- Adobe Photoshop</div>
+                        <div class="project-item">- Браузер Chrome</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать C++</a>
+                </div>
+            </div>
+            
+            <!-- C# -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">5</span>
+                    <h2 class="language-title">C#</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Windows/.NET/Игры</span>
+                        <span>Сложность: Средняя</span>
+                    </div>
+                    <div class="language-description">
+                        C# — основной язык платформы .NET, разработанный Microsoft. Широко используется для разработки Windows-приложений, игр на Unity и корпоративных решений. Современный C# включает функциональные элементы (LINQ, лямбды).
+                        
+                        Базовое изучение займет 2-3 месяца. Для профессионального использования нужно освоить .NET Core, Entity Framework и другие технологии экосистемы (6-12 месяцев). C# проще Java благодаря лучшей документации и инструментам Visual Studio.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Игры на Unity</div>
+                        <div class="project-item">- Microsoft Office</div>
+                        <div class="project-item">- Stack Overflow</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать C#</a>
+                </div>
+            </div>
+            
+            <!-- Go -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">6</span>
+                    <h2 class="language-title">Go (Golang)</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Бэкенд/Микросервисы</span>
+                        <span>Сложность: Средняя</span>
+                    </div>
+                    <div class="language-description">
+                        Go — современный язык от Google для создания высокопроизводительных серверных приложений. Главные преимущества — простота, встроенная поддержка многопоточности (горутины) и быстрая компиляция.
+                        
+                        Основы можно освоить за 1-2 месяца благодаря минималистичному синтаксису. Для профессионального использования нужно разобраться в работе с каналами, интерфейсами и стандартной библиотеке (3-6 месяцев). Go особенно популярен в облачных технологиях и DevOps.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Docker</div>
+                        <div class="project-item">- Kubernetes</div>
+                        <div class="project-item">- Uber (часть сервисов)</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Go</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Рекламный блок 2 -->
+        <div class="ad-placeholder">
+            <h3>Тут могла быть ваша реклама</h3>
+            <p>Размещение рекламы в MillsCome — это доступ к аудитории разработчиков и IT-специалистов</p>
+            <a href="https://t.me/MillsCome" class="btn" target="_blank">Узнать условия</a>
+        </div>
+        
+        <!-- Ruby -->
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">7</span>
+                    <h2 class="language-title">Ruby</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Веб-разработка</span>
+                        <span>Сложность: Низкая</span>
+                    </div>
+                    <div class="language-description">
+                        Ruby — динамический язык с элегантным синтаксисом, ставший популярным благодаря фреймворку Ruby on Rails. Используется для быстрой разработки веб-приложений и прототипирования.
+                        
+                        Основы Ruby можно изучить за 1 месяц. Для профессионального использования нужно освоить Rails, RSpec и принципы MVC (3-6 месяцев). Ruby особенно подходит для стартапов благодаря быстрой разработке. Однако его популярность снижается в пользу Python и JavaScript.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- GitHub (первая версия)</div>
+                        <div class="project-item">- Shopify</div>
+                        <div class="project-item">- Twitter (ранние версии)</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Ruby</a>
+                </div>
+            </div>
+            
+            <!-- Swift -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">8</span>
+                    <h2 class="language-title">Swift</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>iOS/macOS разработка</span>
+                        <span>Сложность: Средняя</span>
+                    </div>
+                    <div class="language-description">
+                        Swift — современный язык Apple для разработки под iOS, macOS и другие продукты компании. Заменил Objective-C, предлагая более безопасный и выразительный синтаксис. Поддерживает протокол-ориентированное программирование.
+                        
+                        Базовый синтаксис изучается за 1-2 месяца. Для создания реальных приложений нужно освоить UIKit/SwiftUI и особенности платформы Apple (6-12 месяцев). Swift — обязательный язык для мобильных разработчиков в экосистеме Apple.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Приложения для iPhone/iPad</div>
+                        <div class="project-item">- Lyft</div>
+                        <div class="project-item">- Airbnb (мобильное приложение)</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Swift</a>
+                </div>
+            </div>
+            
+            <!-- PHP -->
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">9</span>
+                    <h2 class="language-title">PHP</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Веб-разработка</span>
+                        <span>Сложность: Низкая</span>
+                    </div>
+                    <div class="language-description">
+                        PHP — язык для веб-разработки, который powers большую часть интернета. Современные версии (7.4+, 8.0) значительно улучшили производительность и добавили строгую типизацию. Основной язык CMS WordPress.
+                        
+                        Основы PHP можно изучить за 1 месяц. Для профессионального использования нужно освоить фреймворки (Laravel, Symfony) и работу с базами данных (3-6 месяцев). Несмотря на критику, PHP остается востребованным благодаря огромной установленной базе.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- WordPress</div>
+                        <div class="project-item">- Facebook (ранние версии)</div>
+                        <div class="project-item">- Wikipedia</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать PHP</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rust -->
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-header">
+                    <span class="language-rank">10</span>
+                    <h2 class="language-title">Rust</h2>
+                </div>
+                <div class="language-body">
+                    <div class="language-meta">
+                        <span>Системное программирование</span>
+                        <span>Сложность: Очень высокая</span>
+                    </div>
+                    <div class="language-description">
+                        Rust — современный язык системного программирования, сочетающий производительность C++ с безопасностью памяти. Набирает популярность в разработке ОС, браузерных движков и криптографии. Имеет крутую кривую обучения.
+                        
+                        Для базового понимания потребуется 3-4 месяца. Полное освоение займет 1-2 года из-за сложных концепций (владение, заимствование, времена жизни). Rust рекомендуется тем, кто уже имеет опыт программирования и нуждается в максимальной производительности.
+                    </div>
+                    <div class="language-projects">
+                        <div class="projects-title">Известные проекты:</div>
+                        <div class="project-item">- Firefox (часть компонентов)</div>
+                        <div class="project-item">- Dropbox (системные части)</div>
+                        <div class="project-item">- Cloudflare (криптография)</div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Изучать Rust</a>
+                </div>
+            </div>
+        </div>
+        <b>здесь могла быть ваша реклама </b>
+        <div style="text-align: center; margin: 4rem 0;">
+            <a href="https://golpool092.github.io/main/" class="btn">← Вернуться на главную</a>
+            <a href="https://t.me/MillsCome" class="btn" target="_blank" style="margin-left: 1rem;">Наш Telegram</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 MillsCome. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="https://golpool092.github.io/main/" class="footer-link">Главная</a>
+                <a href="https://t.me/MillsCome" class="footer-link" target="_blank">Telegram</a>
+                <a href="#" class="footer-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.language-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Плавный скролл для якорей
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
